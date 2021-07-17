@@ -29,7 +29,7 @@ export const ArticlesList = () => {
         )
     }else{
         return(
-            <div></div>
+            <div className={ArticlesListCSS.articlesSectionContainer}></div>
         )
     }
 }

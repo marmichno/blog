@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="commentsContainer"
+  data-testid="commentsContainer"
+>
+  <div
+    className="commentsContainer__postCommentContainer"
+  >
+    <label
+      className="commentsContainer__postCommentContainer__label"
+      htmlFor="userName"
+    >
+      <span
+        className="commentsContainer__postCommentContainer__span"
+      >
+        <p
+          className="commentsContainer__postCommentContainer__span__paragraph"
+        >
+          Name
+        </p>
+      </span>
+    </label>
+    <input
+      autoComplete="off"
+      className="commentsContainer__postCommentContainer__input"
+      name="userName"
+      onChange={[Function]}
+      required={true}
+      type="text"
+    />
+    <label
+      className="commentsContainer__postCommentContainer__label"
+      htmlFor="userEmail"
+    >
+      <span
+        className="commentsContainer__postCommentContainer__span"
+      >
+        <p
+          className="commentsContainer__postCommentContainer__span__paragraph"
+        >
+          Email
+        </p>
+      </span>
+    </label>
+    <input
+      autoComplete="off"
+      className="commentsContainer__postCommentContainer__input"
+      name="userEmail"
+      onChange={[Function]}
+      required={true}
+      type="text"
+    />
+    <label
+      className="commentsContainer__postCommentContainer__label"
+      htmlFor="commentBody"
+    >
+      <span
+        className="commentsContainer__postCommentContainer__span"
+      >
+        <p
+          className="commentsContainer__postCommentContainer__span__paragraph"
+        >
+          Comment
+        </p>
+      </span>
+    </label>
+    <textarea
+      autoComplete="off"
+      className="commentsContainer__postCommentContainer__textArea"
+      name="commentBody"
+      onChange={[Function]}
+      required={true}
+      type="text"
+    />
+    <button
+      className="commentsContainer__postCommentContainer__button"
+      data-testid="postRequest"
+      onClick={[Function]}
+    >
+      Add comment
+    </button>
+  </div>
+</div>
+`;

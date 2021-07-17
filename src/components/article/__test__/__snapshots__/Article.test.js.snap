@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="articleContainer"
+  data-testid="articleContainer"
+>
+  <span
+    className="articleContainer__image"
+  />
+  <div
+    className="articleContainer__textContainer"
+  >
+    <h2
+      className="articleContainer__textContainer__header"
+    >
+      sunt aut facere repellat provident occaecati excepturi optio reprehenderit
+    </h2>
+    <p
+      className="articleContainer__textContainer__published"
+    >
+      07/12/2021 | John Doe
+    </p>
+    <p
+      className="articleContainer__textContainer__paragraph"
+    >
+      quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto
+    </p>
+    <button
+      className="articleContainer__textContainer__button"
+      data-articleid={1}
+      onClick={[Function]}
+    >
+      Read more ⤴
+    </button>
+  </div>
+  <div
+    className="articleContainer__favourite"
+    data-articleid={1}
+    data-testid="addToFavorite"
+    onClick={[Function]}
+  />
+</div>
+`;

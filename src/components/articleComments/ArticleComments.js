@@ -43,7 +43,7 @@ export const ArticleComments = () => {
 
     if(comments !== undefined){
         return(
-            <div className={ArticleCommentsCSS.commentsContainer}>
+            <div data-testid="commentsContainer" className={ArticleCommentsCSS.commentsContainer}>
                 <div className={ArticleCommentsCSS.commentsContainer__postCommentContainer}>
                     <label htmlFor="userName" className={ArticleCommentsCSS.commentsContainer__postCommentContainer__label}>
                         <span className={ArticleCommentsCSS.commentsContainer__postCommentContainer__span}>
@@ -80,11 +80,11 @@ export const ArticleComments = () => {
                     onChange = {handleUserCommentChange}
                     required>
                     </textarea>
-                    <button className={ArticleCommentsCSS.commentsContainer__postCommentContainer__button} onClick={postComment}>Add comment</button>
+                    <button data-testid="postRequest" className={ArticleCommentsCSS.commentsContainer__postCommentContainer__button} onClick={postComment}>Add comment</button>
                 </div>
 
                 {comments.map(value => {
-                    return <div className={ArticleCommentsCSS.commentsContainer__commentContainer}>
+                    return <div key={value.id} className={ArticleCommentsCSS.commentsContainer__commentContainer}>
                         <p className={ArticleCommentsCSS.commentsContainer__commentContainer__name}>{value.name} 
                             <span className={ArticleCommentsCSS.commentsContainer__commentContainer__name__date}> - 07/12/2021 14:26</span>
                         </p>
@@ -96,7 +96,7 @@ export const ArticleComments = () => {
         )
     }else{
         return(
-            <div className={ArticleCommentsCSS.commentsContainer}></div>
+            <div data-testid="commentsContainer" className={ArticleCommentsCSS.commentsContainer}></div>
         )
     }
 }

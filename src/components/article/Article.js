@@ -52,7 +52,7 @@ export const Article = ({id, title, paragraph}) => {
     }
 
     return(
-        <div className={ArticlesCSS.articleContainer}>
+        <div data-testid="articleContainer" className={ArticlesCSS.articleContainer}>
             <span className={ArticlesCSS.articleContainer__image}></span>
             <div className={ArticlesCSS.articleContainer__textContainer}>
                 <h2 className={ArticlesCSS.articleContainer__textContainer__header}>{title}</h2>
@@ -65,10 +65,11 @@ export const Article = ({id, title, paragraph}) => {
                 <div className=
                 {`${ArticlesCSS.articleContainer__favourite} ${ArticlesCSS['articleContainer__favourite--active']}`}
                 onClick={favorites}
+                data-testid="favorite"
                 data-articleid={id}>
                 </div>
                 :
-                <div className={ArticlesCSS.articleContainer__favourite} data-articleid={id} onClick={favorites}></div>
+                <div data-testid="addToFavorite" className={ArticlesCSS.articleContainer__favourite} data-articleid={id} onClick={favorites}></div>
             }
         </div>
     )

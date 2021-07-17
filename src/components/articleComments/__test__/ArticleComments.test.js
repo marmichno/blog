@@ -1,33 +1,60 @@
-import { createStore, applyMiddleware, Provider} from 'redux';
+import { createStore, applyMiddleware} from 'redux';
+import { Provider } from 'react-redux';
 import {ArticleComments} from '../ArticleComments';
 import validArticleComments from '../__mocks__/validArticleComments.json';
-import {render, fireEvent, waitFor, screen} from '@testing-library/react';
+import {render, waitFor, fireEvent} from '@testing-library/react';
 import React from 'react';
+import "@testing-library/jest-dom/extend-expect";
+import TestRenderer from "react-test-renderer";
 
 const store = createStore(() => [], {}, applyMiddleware());
 
-
-
-test("check if comments are visible after api call", async () => {
-
-    global.fetch = jest.fn(() =>
+global.fetch = jest.fn(() =>
   Promise.resolve({
     json: () => Promise.resolve(validArticleComments),
   })
 );
 
-// const spy = jest.spyOn(redux, 'useSelector');
-// spy.mockReturnValue([{ 
-//     price:"6.00",
-//     name:"philadelphia",
-//     quantity:1
-//  }]);
+afterEach(() => {
+  jest.clearAllMocks();
+});
+
+test("check if comments are visible after api call", async () => {
 
     const {getAllByText} = render(<Provider store={store}><ArticleComments/></Provider>);
 
     await waitFor(() => {
         expect(getAllByText('id labore ex et quam laborum'));
         expect(getAllByText('Eliseo@gardner.biz'));
-        expect(getAllByText('laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium'));
+        expect(getAllByText('laudantium enim quasi est quidem magnam voluptate ipsam eos tempora quo necessitatibus dolor quam autem quasi reiciendis et nam sapiente accusantium'));
     })
-})
+});
+
+test("handles exception - renders without comments", async () => {
+
+fetch.mockImplementationOnce(() => Promise.reject("API FAILURE"));
+
+  const {getByTestId} = render(<Provider store={store}><ArticleComments/></Provider>);
+
+  await waitFor(() => {
+    expect(getByTestId("commentsContainer")).toBeTruthy();
+  })
+});
+
+test("get request is called after post request", async () => {
+  
+    const {getByTestId} = render(<Provider store={store}><ArticleComments/></Provider>);
+
+    await waitFor(() => {
+      fireEvent.click(getByTestId("postRequest"));
+  })
+  
+    await waitFor(() => {
+      expect(fetch).toHaveBeenCalledTimes(3);
+    })
+  });
+
+test("matches snapshot", () => {
+  const tree = TestRenderer.create(<Provider store={store}><ArticleComments/></Provider>).toJSON();
+  expect(tree).toMatchSnapshot();
+});

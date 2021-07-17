@@ -19,7 +19,11 @@ export const postArticleComment = async (postId, name, email, body) => {
     redirect: 'follow'
     };
 
-    const request = await fetch("https://jsonplaceholder.typicode.com/comments", requestOptions)
-    const response = await request.json();
-    return response;
+    try{
+        const request = await fetch("https://jsonplaceholder.typicode.com/comments", requestOptions)
+        const response = await request.json();
+        return response;
+    }catch(error){
+        console.log(error);
+    }
 }
