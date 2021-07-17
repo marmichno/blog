@@ -1,0 +1,28 @@
+.articlesSectionContainer{
+    width:100vw;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow-x:hidden;
+    background-color:rgb(247, 247, 247);
+}
+
+.articlesContainer{
+    width:65%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+@media screen and (max-width:817px){
+    .articlesContainer{
+        width:80%;
+    }
+}
+
+@media screen and (max-width:500px){
+    .articlesContainer{
+        width:90%;
+    }
+}

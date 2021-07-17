@@ -1,0 +1,127 @@
+.commentsContainer{
+    width:40%;
+    display:flex;
+    flex-direction:column; 
+    margin-top:5%;
+}
+
+@media screen and (max-width:1038px){
+    .commentsContainer{
+        width:80%;
+    }
+}
+
+.commentsContainer__postCommentContainer{
+    width:100%;
+    min-height:25vh;
+    display:flex;
+    flex-direction:column;
+    align-items:left;
+    justify-content:left;
+    margin-bottom:5%;
+}
+
+@media screen and (max-width:1038px){
+    .commentsContainer__postCommentContainer{
+        align-items:center;
+        justify-content:center;
+    }
+}
+
+.commentsContainer__postCommentContainer__span{
+    font-size:1.5em;
+}
+
+.commentsContainer__postCommentContainer__input{
+    width:50%;
+    padding:0.3em;
+    font-size:1.2em;
+}
+
+@media screen and (max-width:1038px){
+    .commentsContainer__postCommentContainer__input{
+        margin-bottom:0.5em;
+    }
+}
+
+@media screen and (max-width:700px){
+    .commentsContainer__postCommentContainer__input{
+        width:60%;
+    }
+}
+
+@media screen and (max-width:500px){
+    .commentsContainer__postCommentContainer__input{
+        width:70%;
+    }
+}
+
+.commentsContainer__postCommentContainer__textArea{
+    padding:1em;
+    width:60%;
+    min-height:150px;
+    margin-bottom:2em;
+    resize:none;
+}
+
+@media screen and (max-width:700px){
+    .commentsContainer__postCommentContainer__textArea{
+        width:60%;
+    }
+}
+
+@media screen and (max-width:500px){
+    .commentsContainer__postCommentContainer__textArea{
+        width:70%;
+    }
+}
+
+.commentsContainer__postCommentContainer__button{
+    padding-top:0.5rem;
+    padding-bottom:0.5rem;
+    padding-left:1rem;
+    padding-right:1rem;
+    background-color:#03256C;
+    border:1px solid;
+    font-size:1.2em;
+    border-radius:5px;
+    color:white;
+    max-width:30%;
+    cursor:pointer;
+    transition:transform 0.1s ease-in;
+    outline:none;
+}
+
+@media screen and (max-width:500px){
+    .commentsContainer__postCommentContainer__button{
+        max-width:50%;
+    }
+}
+
+.commentsContainer__commentContainer{
+    width:100%;
+    height:18vh;
+    min-height:150px;
+    border-left:1px solid #03256C;
+    padding-left:1.5em;
+}
+
+.commentsContainer__commentContainer__name{
+    font-size:1.5em;
+    font-weight:600;
+}
+
+.commentsContainer__commentContainer__name__date{
+    font-weight:100;
+    font-size:0.7em;
+}
+
+.commentsContainer__commentContainer__email{
+    font-weight:600;
+    font-size:1.3em;
+    margin-bottom:1em;
+}
+
+.commentsContainer__commentContainer__body{
+    font-size:1.1em;
+}
