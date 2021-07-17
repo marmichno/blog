@@ -1,12 +1,27 @@
 import { createStore, applyMiddleware, Provider} from 'redux';
 import {ArticleComments} from '../ArticleComments';
 import validArticleComments from '../__mocks__/validArticleComments.json';
+import {render, fireEvent, waitFor, screen} from '@testing-library/react';
+import React from 'react';
 
 const store = createStore(() => [], {}, applyMiddleware());
 
+
+
 test("check if comments are visible after api call", async () => {
 
-    fetch.mockResponseOnce(JSON.stringify(validArticleComments));
+    global.fetch = jest.fn(() =>
+  Promise.resolve({
+    json: () => Promise.resolve(validArticleComments),
+  })
+);
+
+// const spy = jest.spyOn(redux, 'useSelector');
+// spy.mockReturnValue([{ 
+//     price:"6.00",
+//     name:"philadelphia",
+//     quantity:1
+//  }]);
 
     const {getAllByText} = render(<Provider store={store}><ArticleComments/></Provider>);
 
