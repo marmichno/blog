@@ -40,7 +40,7 @@ export const FullArticle = () => {
 
     if(article !== undefined){
         return(
-            <div className={FullArticleCSS.articleContainer}>
+            <div data-testid="articleContainer" className={FullArticleCSS.articleContainer}>
                 <div className={FullArticleCSS.articleContainer__heroContainer}>
                     <div className={FullArticleCSS.articleContainer__heroContainer__imageContainer}></div>
                     <div className={FullArticleCSS.articleContainer__heroContainer__textContainer}>
@@ -62,7 +62,7 @@ export const FullArticle = () => {
                 {!favorite ?
                     <div className={FullArticleCSS.articleContainer__addToFavoritesContainer}>
                         <h2 className={FullArticleCSS.articleContainer__addToFavoritesContainer__text}>Did you enjoy reading this article? Add it to 
-                            <button className={FullArticleCSS.articleContainer__addToFavoritesContainer__text__button} onClick={addToFavorite}>favorites</button>
+                            <button data-testid="favoriteButton" className={FullArticleCSS.articleContainer__addToFavoritesContainer__text__button} onClick={addToFavorite}>favorites</button>
                         </h2>
                     </div>
                 :
@@ -73,7 +73,7 @@ export const FullArticle = () => {
         )
     }else{
         return(
-            <div className={FullArticleCSS.articleContainer}></div>
+            <div data-testid="articleContainer" className={FullArticleCSS.articleContainer}></div>
         )
     }
 }
