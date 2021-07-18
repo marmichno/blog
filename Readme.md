@@ -11,7 +11,7 @@ API: https://jsonplaceholder.typicode.com/
 - CSS3 - css modules with bem notation
 - HTML
 - redux - state management
-- React router
+- React router - routing
 - jest - functionality testing
 
 ## Installation
