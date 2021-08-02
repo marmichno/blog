@@ -1,5 +1,7 @@
 # Blog page
 
+![blog](https://user-images.githubusercontent.com/72525469/127885391-1a6d66fc-4926-4c9d-add5-2c0a24a4b66b.gif)
+
 ## About project
 
 Blog page containing article list with full text preview, comments section and favorite article functionality.<br>
